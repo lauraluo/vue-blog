@@ -51,12 +51,19 @@ gulp.task('sprite', function() {
 
 //vue
 gulp.task("vueify", function() {
-    return gulp.src('src/main.js')
+    return gulp
+        .src('src/main.js')
         .pipe(browserify({
             transform: 'vueify',
             insertGlobals : true,
-            debug : !gulp.env.production
+            debug : true
         }))
+        .on('error', function(err){
+          // print the error (can replace with gulp-util)
+          console.log(err.message);
+          // end this stream
+          this.emit('end');
+        })
         .pipe(gulp.dest('dist/'))
         .pipe(connect.reload());
 });
