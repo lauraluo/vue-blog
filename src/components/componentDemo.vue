@@ -44,12 +44,12 @@
                             div.small-3.columns
                                 label.text-right.middle(for="title") 文章標題
                             div.small-9.columns
-                                //- input(type="text",placeholder="請輸入文章標題", value="{{list[activePost].title??list[activePost].title}}")
+                                input(type="text",placeholder="請輸入文章標題", value="{{list[activePost].title}}")
                         div.row
                             div.small-3.columns
                                 label.text-right.middle(for="title") 文章內容
                             div.small-9.columns
-                                textarea(placeholder="請輸入文章文章內容", rows="8", v-html="item.content | marked") 
+                                textarea(placeholder="請輸入文章文章內容", rows="8", v-html="list[activePost].content") 
                         hr
                         div.news-editor__ctrl.text-center 
                             a.button.secondary(href="#") 取消
