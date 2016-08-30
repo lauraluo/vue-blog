@@ -101,17 +101,21 @@ body{
 
 .l-vm {
     //使用的時後，請給l-vm層定義高度
+    text-align: center;
+    > div {
+        text-align: left;
+    }
     &:before {
-      content: '';
-      display: inline-block;
-      height: 100%;
-      width: 0;
-      vertical-align: middle;
-      margin-left: -0.35em;
+        content: '';
+        display: inline-block;
+        height: 100%;
+        width: 0;
+        vertical-align: middle;
+        margin-left: -0.35em;
     }
     &__content {
         display: inline-block;
         vertical-align: middle;
-        padding-left: 0.07em; 
+        padding-left: 0.07em;
     }
 }

@@ -1,46 +1,56 @@
 @charset 'UTF-8';
 
 
+/* ==========================================================================
+ *  使用 foundation 的注意事項
+ * =>  0  @import 'framework/foundation/foundation';  
+ * =>  2-1  使用foundation所有功能 則   @include foundation-everything;
+ * =>  2-2  使用foundation部份功能 則 參考 framework/foundation/foundation.scss 的 foundation-everything mixin 來選擇想要使用的功能
+ * =>  提醒使用 foundation，必需放棄 SASS 的 7-1 pattem 否則可能會有變數名稱重複定義的問題
+ * =>  提醒使用 foundation，使用 rem-calc(value) 計算所有單位
+     ========================================================================== */
 
+@import 'vendor/foundation/foundation';
+@include foundation-everything;
 /* ----- IMPORT -----*/
 
-//1.utils
+// //1.utils
 @import "utils/_variables.scss";
 @import "utils/_mixins.scss";
 @import "utils/_colors.scss";
 @import "utils/_grid.scss";
-//2.vendors
-//3.base
-@import "base/_reset.scss";
-@import "base/_typography.scss";
-//4.layout
+// //2.vendors
+// //3.base
+// @import "base/_reset.scss";
+// @import "base/_typography.scss";
+// //4.layout
 @import "layout/_layout.scss";
-@import "layout/_nav.scss";
-//5.components
-@import "components/_load.scss"; //html 在 load.js 裡
-//6.pages
-//7.themes
+// @import "layout/_nav.scss";
+// //5.components
+// @import "components/_load.scss"; //html 在 load.js 裡
+// //6.pages
+// //7.themes
 			
-$tran:0.3s ease-in all;
-$boxShadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.1);
+// $tran:0.3s ease-in all;
+// $boxShadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.1);
 
-body {
-	// background: black;
-}
+// body {
+// 	// background: black;
+// }
 
-.index {
-	.l-vm {
-		height: 80vh;
-		width: 100%;
-		background: #d6d6d6;
-		text-align: center;
-	}
-	.l-vm__content {
-		background: red;
-		min-height: 200px;
-	}
-	@include respond-to(small-up) {
-	}
-}
+// .index {
+// 	.l-vm {
+// 		height: 80vh;
+// 		width: 100%;
+// 		background: #d6d6d6;
+// 		text-align: center;
+// 	}
+// 	.l-vm__content {
+// 		background: red;
+// 		min-height: 200px;
+// 	}
+// 	@include respond-to(small-up) {
+// 	}
+// }
 
 

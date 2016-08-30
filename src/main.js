@@ -1,20 +1,21 @@
 var Vue = require('vue')
-var App = require('./components/app.vue')
-
+var TransDemo = require('./components/transDemo.vue')
+var ComponentDemo = require('./components/componentDemo.vue')
+var lightBox = require('./components/lightBox.vue')
 
 Vue.transition('bounce', {
     enterClass: 'bounceInLeft',
     leaveClass: 'bounceOutRight'
 });
 
+Vue.transition('fade', {
+    enterClass: 'fadeIn',
+    leaveClass: 'fadeOut'
+});
 
 Vue.transition('gsap', {
     beforeEnter: function(el,done) {
         console.log('beforeEnter');
-        el.textContent = 'beforeEnter';
-
-
-
     },
     enter: function(el,done) {
     	var wrap;
@@ -38,11 +39,9 @@ Vue.transition('gsap', {
         }
 
         TweenMax.fromTo(el, 0.6, { xPercent: -100, opacity: 0 }, { xPercent: 0, opacity: 1 , ease: Back.easeOut.config(2),onComplete:done});
-        el.textContent = 'enter';
     },
     afterEnter: function(el,done) {
         console.log('afterEnter');
-        el.textContent = 'afterEnter'
     },
     enterCancelled: function(el,done) {
 
@@ -70,16 +69,13 @@ Vue.transition('gsap', {
 
         }
         TweenMax.fromTo(el, 0.6, { xPercent: 0, opacity: 1 }, { xPercent: 100, opacity: 0 ,ease: Back.easeOut.config(2),onComplete:done});
-        el.textContent = 'beforeLeave'
     },
     leave: function(el,done) {
         console.log('leave');
-        el.textContent = 'leave'
     },
     afterLeave: function(el,done) {
         console.log('afterLeave');
 
-        el.textContent = 'afterLeave'
     },
     leaveCancelled: function(el) {
         // handle cancellation
@@ -87,13 +83,17 @@ Vue.transition('gsap', {
 });
 
 
+Vue.component('light-box',lightBox);
 
 window.onload = function() {
-	Vue.config.debug = true;
+	Vue.config.debug = false;
+
     var mv = new Vue({
         el: 'body',
         components: {
-            app: App
+            app1: TransDemo,
+            app2: ComponentDemo
+
         }
     });
 }

@@ -58,11 +58,11 @@ gulp.task("vueify", function() {
             insertGlobals : true,
             debug : true
         }))
-        .on('error', function(err){
-          // print the error (can replace with gulp-util)
-          console.log(err.message);
-          // end this stream
-          this.emit('end');
+        .on('error', function(err) {
+            // print the error (can replace with gulp-util)
+            console.log(err.message);
+            // end this stream
+            this.emit('end');
         })
         .pipe(gulp.dest('dist/'))
         .pipe(connect.reload());
@@ -134,7 +134,7 @@ gulp.task('watch', function() {
     gulp.watch(['src/js/**'], ['copyJS']);
     gulp.watch(['src/images/**'], ['copyImg']);
     gulp.watch(['dist/*.html'], ['html']);
-    gulp.watch(['src/components/**/*.vue'], ['vueify']);
+    gulp.watch(['src/components/**/*.vue','src/main.js'], ['vueify']);
 });
 
 //Build
