@@ -7,13 +7,12 @@ ul {
 
 
 .transDemo {
-	padding:40px;
 	dt {
 		font-size:2.8rem;
 		font-weight: normal; 
 	}
 	dd {
-		padding-bottom:40px;
+		//padding-bottom:40px;
 	}
 	&__content {
 		//box-sizing:border-box;

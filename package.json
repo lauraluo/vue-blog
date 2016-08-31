@@ -40,6 +40,8 @@
     "jade": "^1.11.0",
     "jshint": "^2.8.0",
     "stylus": "^0.54.5",
+    "vue-router": "^0.7.13",
+    "vue-validator": "^2.1.6",
     "vueify": "^8.7.0",
     "vueify-insert-css": "^1.0.0"
   },

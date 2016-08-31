@@ -1,7 +1,12 @@
 var Vue = require('vue')
+var vueValidator = require('vue-validator')
 var TransDemo = require('./components/transDemo.vue')
 var ComponentDemo = require('./components/componentDemo.vue')
 var lightBox = require('./components/lightBox.vue')
+var VueRouter = require('vue-router')
+
+Vue.use(vueValidator)
+Vue.use(VueRouter)
 
 Vue.transition('bounce', {
     enterClass: 'bounceInLeft',
@@ -86,14 +91,24 @@ Vue.transition('gsap', {
 Vue.component('light-box',lightBox);
 
 window.onload = function() {
-	Vue.config.debug = false;
+	Vue.config.debug = true;
 
-    var mv = new Vue({
-        el: 'body',
-        components: {
-            app1: TransDemo,
-            app2: ComponentDemo
 
-        }
+    var vm = Vue.extend({
     });
+
+
+	var router = new VueRouter();
+
+	router.map({
+	    '/component': {
+	        component: Vue.extend(ComponentDemo)
+	    },
+	    '/transition': {
+	        component: Vue.extend(TransDemo)
+	    }
+	});
+
+
+	router.start(vm,'#app');
 }

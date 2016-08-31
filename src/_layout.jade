@@ -2,13 +2,16 @@ doctype
 html(itemscope,itemtype="http://schema.org/Article",ng-app="markup" debug="false")
     include _head.jade
     body(class="l-index")
-        div.l-wrap 
-            app1
-            app2
-            //- include _nav.jade
-
+        div#app.l-wrap
+            div.row
+                div.expanded.button-group.small-12.columns
+                    a.button(v-link="{path:'/component'}") Component Demo
+                    a.button(v-link="{path:'/transition'}") Transition Demo
             div.l-main
-                block page_main
+                router-view
+            //- app1
+            //- app2
+            //- include _nav.jade
         div.l-footer.footer
             div.l-container
                 p footer
