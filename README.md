@@ -1,3 +1,6 @@
+#Demo 網址
+https://lauraluo.github.io/vue-blog/dist/index.html#!/
+
 # vue-blog
 
 目標在於熟悉vue在web app中的實際應用
