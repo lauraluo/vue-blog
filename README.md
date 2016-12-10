@@ -1,13 +1,13 @@
 #Demo 網址
 https://lauraluo.github.io/vue-blog/dist/index.html#!/
 
+開了小差，練習影片播放器的實作
+https://lauraluo.github.io/vue-video-player/dist/index.html
+https://lauraluo.github.io/vue-video-player/dist/index2.html
+
 # vue-blog
 
 目標在於熟悉vue在web app中的實際應用
-
-
-
-
 # 關於環境安裝
 
 
