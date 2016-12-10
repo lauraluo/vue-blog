@@ -1,9 +1,9 @@
 #Demo 網址
 https://lauraluo.github.io/vue-blog/dist/index.html#!/
 
-開了小差，練習影片播放器的實作
-https://lauraluo.github.io/vue-video-player/dist/index.html
-https://lauraluo.github.io/vue-video-player/dist/index2.html
+開了小差，練習影片播放器的實作，順便練習一下vue2
+- https://lauraluo.github.io/vue-video-player/dist/index.html
+- https://lauraluo.github.io/vue-video-player/dist/index2.html
 
 # vue-blog
 
